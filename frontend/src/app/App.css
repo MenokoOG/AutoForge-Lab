@@ -1,0 +1,101 @@
+/* App-local styles (safe with Tailwind) */
+
+:root {
+  color-scheme: dark;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #f4f4f5;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.card {
+  background: rgba(24, 24, 27, 0.85);
+  border: 1px solid rgba(63, 63, 70, 0.6);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.muted {
+  color: rgba(244, 244, 245, 0.75);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(63, 63, 70, 0.7);
+  background: rgba(39, 39, 42, 0.9);
+  color: #f4f4f5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.7);
+  outline-offset: 2px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid rgba(63, 63, 70, 0.5);
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  color: rgba(244, 244, 245, 0.8);
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(63, 63, 70, 0.6);
+  background: rgba(24, 24, 27, 0.9);
+  font-size: 12px;
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

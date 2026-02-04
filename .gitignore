@@ -1,0 +1,91 @@
+# =========================
+# Secrets / env
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cover/
+.pyre/
+.mypy_cache/
+.pytype/
+.pyright/
+.ruff_cache/
+nox/.nox/
+.venv/
+venv/
+ENV/
+env/
+
+# FastAPI / Uvicorn
+*.log
+
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+dist/
+build/
+.vite/
+.vite-cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npmrc
+
+# =========================
+# Playwright
+# =========================
+playwright-report/
+test-results/
+trace.zip
+traces/
+*.webm
+*.mp4
+
+# =========================
+# Docker
+# =========================
+*.pid
+docker-data/
+**/.docker/
+**/.DS_Store
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Databases / local volumes
+# =========================
+*.sqlite
+*.db
+pgdata/
