@@ -1,3 +1,4 @@
+/* frontend/src/app/App.css */
 /* App-local styles (safe with Tailwind) */
 
 :root {
@@ -11,9 +12,22 @@
 }
 
 .app-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 24px 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .card {
@@ -23,9 +37,12 @@
   padding: 16px;
 }
 
-.card h1,
-.card h2,
-.card h3 {
+.card.subtle {
+  background: rgba(24, 24, 27, 0.55);
+}
+
+.h2 {
+  font-size: 16px;
   margin: 0 0 8px 0;
   line-height: 1.2;
 }
@@ -41,6 +58,11 @@
   align-items: center;
 }
 
+.grow {
+  flex: 1;
+  min-width: 240px;
+}
+
 .btn {
   appearance: none;
   border: 1px solid rgba(63, 63, 70, 0.7);
@@ -49,16 +71,58 @@
   border-radius: 10px;
   padding: 10px 12px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .btn:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.06);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .btn:focus {
   outline: 2px solid rgba(59, 130, 246, 0.7);
   outline-offset: 2px;
+}
+
+.btn-primary {
+  border-color: rgba(96, 165, 250, 0.9);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.select,
+.input {
+  border: 1px solid rgba(63, 63, 70, 0.7);
+  background: rgba(39, 39, 42, 0.85);
+  color: #f4f4f5;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-weight: 700;
+}
+
+.input::placeholder {
+  color: rgba(244, 244, 245, 0.45);
+}
+
+.alert {
+  border: 1px solid rgba(239, 68, 68, 0.55);
+  background: rgba(127, 29, 29, 0.18);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.alert-title {
+  font-weight: 900;
+  margin-bottom: 6px;
 }
 
 .table {
@@ -76,8 +140,8 @@
 }
 
 .table th {
-  color: rgba(244, 244, 245, 0.8);
-  font-weight: 700;
+  color: rgba(244, 244, 245, 0.85);
+  font-weight: 900;
 }
 
 .badge {
@@ -89,6 +153,23 @@
   font-size: 12px;
   margin-right: 6px;
   margin-top: 4px;
+  font-weight: 800;
+}
+
+.badge-success {
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+.badge-running {
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+.badge-queued {
+  border-color: rgba(234, 179, 8, 0.6);
+}
+
+.badge-error {
+  border-color: rgba(239, 68, 68, 0.6);
 }
 
 a {
@@ -98,4 +179,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+code,
+pre {
+  color: rgba(244, 244, 245, 0.9);
 }
