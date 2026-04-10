@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from typing import Optional, Union
+import uuid
 
 from fastapi import APIRouter, BackgroundTasks, Depends
 from sqlalchemy import select
@@ -43,7 +44,7 @@ def _run_job_in_background(job_id: int) -> None:
             return
 
         job.status = "running"
-        job.started_at = datetime.now(timezone.utc)
+        job.started_at = datetime.now(timezone.utc).isoformat()
         db.commit()
 
         from app.scheduler.jobs import run_crawl_sampler  # noqa: WPS433
@@ -56,7 +57,7 @@ def _run_job_in_background(job_id: int) -> None:
             job.status = "error"
             job.message = f"{type(e).__name__}: {e}"
 
-        job.finished_at = datetime.now(timezone.utc)
+        job.finished_at = datetime.now(timezone.utc).isoformat()
         db.commit()
     finally:
         db.close()
@@ -66,11 +67,14 @@ def _run_job_in_background(job_id: int) -> None:
 def run_crawl_now(background: BackgroundTasks):
     db = SessionLocal()
     try:
+        now = datetime.now(timezone.utc).isoformat()
         job = JobRun(
-            name="manual_crawl",
+            job_id="manual_crawl",
+            run_id=uuid.uuid4().hex,
             status="queued",
             message="queued",
-            created_at=datetime.now(timezone.utc),
+            started_at=now,
+            finished_at="",
         )
         db.add(job)
         db.commit()
@@ -108,10 +112,10 @@ def list_jobs(limit: int = 20, db: Session = Depends(get_db)):
     return [
         {
             "id": r.id,
-            "name": getattr(r, "name", "crawl"),
+            "name": r.job_id,
             "status": r.status,
             "message": getattr(r, "message", None),
-            "created_at": _iso(getattr(r, "created_at", None)),
+            "created_at": _iso(getattr(r, "started_at", None)),
             "started_at": _iso(getattr(r, "started_at", None)),
             "finished_at": _iso(getattr(r, "finished_at", None)),
         }

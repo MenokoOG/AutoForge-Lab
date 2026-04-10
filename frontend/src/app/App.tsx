@@ -171,7 +171,7 @@ export default function App() {
     <div className="app-shell">
       <div className="app-container">
         <div className="card">
-          <h1>Learning Lounge Automation Stack</h1>
+          <h1>Automation Stack</h1>
 
           <p className="muted">
             API base: <code>{apiBase}</code>

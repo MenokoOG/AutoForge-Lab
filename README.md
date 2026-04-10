@@ -117,7 +117,7 @@ Scheduler Worker
 ## Runtime
 
 - Docker
-- docker-compose
+- Docker Compose (v2+)
 
 ---
 
@@ -136,18 +136,38 @@ cd autoforge-lab
 ./scripts/up.sh
 ```
 
+The startup script now runs a port preflight check before Docker starts. If a required host port is busy, it exits early with a suggested override command.
+
+If your machine already uses PostgreSQL on `5432`, run with a different host port:
+
+```bash
+POSTGRES_PORT=5433 ./scripts/up.sh
+```
+
+If `8000` or `5173` are already in use too, override all host ports:
+
+```bash
+POSTGRES_PORT=5433 HOST_API_PORT=8001 HOST_FRONTEND_PORT=5174 ./scripts/up.sh
+```
+
+You can run only the preflight check with:
+
+```bash
+bash ./scripts/preflight.sh
+```
+
 Services:
 
-- Backend API → [http://localhost:8000](http://localhost:8000)
-- Frontend → [http://localhost:5173](http://localhost:5173)
-- Database → localhost:5432
+- Backend API → [http://localhost:${HOST_API_PORT:-8000}](http://localhost:${HOST_API_PORT:-8000})
+- Frontend → [http://localhost:${HOST_FRONTEND_PORT:-5173}](http://localhost:${HOST_FRONTEND_PORT:-5173})
+- Database → localhost:${POSTGRES_PORT:-5432}
 
 ---
 
 ## 3️⃣ Health Check
 
 ```bash
-curl http://localhost:8000/health
+curl http://localhost:${HOST_API_PORT:-8000}/health
 ```
 
 Expected:
@@ -247,7 +267,7 @@ Default interval: every 15 minutes.
 Manual trigger:
 
 ```bash
-docker-compose exec worker python -c \
+docker compose exec worker python -c \
 "from app.scheduler.jobs import run_crawl_sampler; run_crawl_sampler()"
 ```
 
