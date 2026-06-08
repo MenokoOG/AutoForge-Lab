@@ -1,4 +1,4 @@
-# AutoForge Lab ⚙️
+# AutoForge Lab 
 
 AutoForge Lab is a containerized Python automation and crawling stack built for engineers who want a clean, extensible pipeline for:
 
@@ -14,7 +14,7 @@ It is designed to be practical, hackable, and self-hostable — not bloated, not
 
 ---
 
-# 🚀 Features
+#  Features
 
 - FastAPI backend API
 - PostgreSQL storage
@@ -33,7 +33,7 @@ It is designed to be practical, hackable, and self-hostable — not bloated, not
 
 ---
 
-# 🧱 Architecture Overview
+#  Architecture Overview
 
 ```
 
@@ -91,7 +91,7 @@ Scheduler Worker
 
 ---
 
-# 🐳 Stack
+#  Stack
 
 ## Backend
 
@@ -121,16 +121,16 @@ Scheduler Worker
 
 ---
 
-# ⚡ Quick Start
+#  Quick Start
 
-## 1️⃣ Clone
+##  Clone
 
 ```bash
 git clone <your-repo-url>
 cd autoforge-lab
 ```
 
-## 2️⃣ Start the Stack
+##  Start the Stack
 
 ```bash
 ./scripts/up.sh
@@ -164,7 +164,7 @@ Services:
 
 ---
 
-## 3️⃣ Health Check
+##  Health Check
 
 ```bash
 curl http://localhost:${HOST_API_PORT:-8000}/health
@@ -178,7 +178,7 @@ Expected:
 
 ---
 
-# 🧪 Dev Commands
+#  Dev Commands
 
 ## Start stack
 
@@ -254,7 +254,7 @@ Writes validated records to DB.
 
 ---
 
-# 🤖 Worker Scheduler
+#  Worker Scheduler
 
 The worker container runs scheduled jobs:
 
@@ -273,7 +273,7 @@ docker compose exec worker python -c \
 
 ---
 
-# 🔐 Safety Features
+#  Safety Features
 
 - robots.txt checks
 - crawl blocking when disallowed
@@ -284,7 +284,7 @@ docker compose exec worker python -c \
 
 ---
 
-# 📊 Data & Pandas
+#  Data & Pandas
 
 Records can be exported and processed with Pandas easily:
 
@@ -297,7 +297,7 @@ Designed for downstream analytics and ML pipelines.
 
 ---
 
-# 🧪 Testing
+#  Testing
 
 Pytest suite included.
 
@@ -311,7 +311,7 @@ CI runs pytest + coverage on pull requests.
 
 ---
 
-# 🧩 Extending the System
+#  Extending the System
 
 Add a new collector:
 
@@ -325,7 +325,7 @@ Add a new extractor or validator the same way — pipeline is intentionally modu
 
 ---
 
-# 🛠 Pro Tips
+#  Pro Tips
 
 - Keep collectors dumb — no parsing inside them
 - Put normalization in validators
@@ -335,7 +335,7 @@ Add a new extractor or validator the same way — pipeline is intentionally modu
 
 ---
 
-# 🤝 Contributing
+#  Contributing
 
 See:
 
