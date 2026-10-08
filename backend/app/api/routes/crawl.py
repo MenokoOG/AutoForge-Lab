@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
-from typing import Optional, Union
 import uuid
+from datetime import datetime, timezone
 
 from fastapi import APIRouter, BackgroundTasks, Depends
 from sqlalchemy import select
@@ -86,7 +85,7 @@ def run_crawl_now(background: BackgroundTasks):
         db.close()
 
 
-def _iso(dt: Optional[Union[datetime, str]]) -> Optional[str]:
+def _iso(dt: datetime | str | None) -> str | None:
     """
     Normalize datetime-ish values to ISO-8601 strings.
     Some DB drivers / mappings can return strings for timestamp fields.

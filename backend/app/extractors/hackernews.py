@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
-from app.schemas.crawl import CrawlRecordIn
+
 from app.extractors.base import BaseExtractor
+from app.schemas.crawl import CrawlRecordIn
 
 
 class HackerNewsExtractor(BaseExtractor):

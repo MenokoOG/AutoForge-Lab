@@ -9,7 +9,7 @@ Selenium is heavier but useful when:
 
 from __future__ import annotations
 
-from app.crawling.base import CollectorResult, BaseCollector
+from app.crawling.base import BaseCollector, CollectorResult
 
 
 class SeleniumCollector(BaseCollector):

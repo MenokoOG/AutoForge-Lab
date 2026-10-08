@@ -2,14 +2,13 @@ import logging
 import uuid
 from datetime import datetime, timezone
 
-from app.core.config import settings
+from app.crawling.collector import HttpCollector
 from app.crawling.robots import RobotsClient
 from app.crawling.throttle import HostThrottle
-from app.crawling.collector import HttpCollector
 from app.db.session import SessionLocal
-from app.extractors.wikipedia import WikipediaExtractor
-from app.extractors.hackernews import HackerNewsExtractor
 from app.extractors.arxiv import ArxivExtractor
+from app.extractors.hackernews import HackerNewsExtractor
+from app.extractors.wikipedia import WikipediaExtractor
 from app.services.crawl_pipeline import CrawlPipeline
 
 logger = logging.getLogger("scheduler.jobs")

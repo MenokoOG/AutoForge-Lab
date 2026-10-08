@@ -1,4 +1,4 @@
-# AutoForge Lab — Architecture Guide
+# AutoForge Lab: Architecture Guide
 
 This document describes the architecture of **AutoForge Lab**, an automation and crawler platform built with FastAPI, PostgreSQL, Docker, and React.
 
@@ -12,7 +12,7 @@ The system is designed to be:
 
 ---
 
-#  High-Level Overview
+# 🧭 High-Level Overview
 
 AutoForge Lab is composed of four primary runtime components:
 
@@ -25,7 +25,7 @@ All services run in Docker containers and communicate over the compose network.
 
 ---
 
-#  System Diagram
+# 🏗 System Diagram
 
 ```
 
@@ -74,7 +74,7 @@ All services run in Docker containers and communicate over the compose network.
 
 ---
 
-#  Crawl Pipeline (OOP Design)
+# 🔄 Crawl Pipeline (OOP Design)
 
 The crawl system uses an object-oriented pipeline pattern.
 
@@ -140,7 +140,7 @@ Examples:
 - URL validation
 - tag normalization
 
-**Pro Tip:** Validators should never fetch data — only transform or reject.
+**Pro Tip:** Validators should never fetch data, only transform or reject.
 
 ---
 
@@ -161,7 +161,7 @@ Models:
 
 ---
 
-#  Scheduling Model
+# ⏱ Scheduling Model
 
 The worker container runs APScheduler.
 
@@ -184,7 +184,7 @@ API endpoint `/crawl/run` creates a JobRun and triggers crawl in a background ta
 
 ---
 
-#  Responsible Crawling Controls
+# 🔐 Responsible Crawling Controls
 
 The crawl pipeline includes safety features:
 
@@ -206,7 +206,7 @@ No fetch occurs.
 
 ---
 
-#  Analytics Layer
+# 📊 Analytics Layer
 
 Optional analytics helpers live outside the ingestion pipeline.
 
@@ -230,7 +230,7 @@ Analytics must not mutate crawl data.
 
 ---
 
-#  API Layer
+# 🌐 API Layer
 
 FastAPI routers expose system state.
 
@@ -268,7 +268,7 @@ GET /crawl/jobs
 
 ---
 
-#  Container Layout
+# 🧱 Container Layout
 
 ```
 
@@ -291,7 +291,7 @@ docker-compose.yml
 
 ---
 
-#  Testing Strategy
+# 🧪 Testing Strategy
 
 pytest suite covers:
 
@@ -304,7 +304,7 @@ Tests avoid network dependency where possible.
 
 ---
 
-#  Extension Points
+# 🧩 Extension Points
 
 Engineers can safely extend:
 
@@ -320,7 +320,7 @@ Design goal: add modules without rewriting core pipeline.
 
 ---
 
-#  Design Principles
+# 🧠 Design Principles
 
 - OOP over script chains
 - validation-first ingestion
@@ -332,7 +332,7 @@ Design goal: add modules without rewriting core pipeline.
 
 ---
 
-#  Future Architecture Options
+# 🚀 Future Architecture Options
 
 Possible upgrades:
 

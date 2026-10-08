@@ -3,15 +3,14 @@ Pandas crawl analytics helpers.
 
 Pro Tip:
 Keep analytics separate from ingestion pipeline.
-Pipelines should be deterministic — analytics can be exploratory.
+Pipelines should be deterministic, analytics can be exploratory.
 """
 
 from __future__ import annotations
 
 import pandas as pd
-from sqlalchemy.orm import Session
-
 from app.models.crawl import CrawlRecord
+from sqlalchemy.orm import Session
 
 
 def records_to_dataframe(db: Session) -> pd.DataFrame:

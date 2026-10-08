@@ -10,7 +10,7 @@ AutoForge Lab is a containerized Python automation and crawling stack built for 
 - Browser automation (Playwright + Selenium)
 - Testable, modular OOP pipelines
 
-It is designed to be practical, hackable, and self-hostable — not bloated, not vendor-locked.
+It is designed to be practical, hackable, and self-hostable, not bloated, not vendor-locked.
 
 ---
 
@@ -126,7 +126,7 @@ Scheduler Worker
 ##  Clone
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/MenokoOG/AutoForge-Lab.git
 cd autoforge-lab
 ```
 
@@ -226,7 +226,7 @@ Expected:
 
 ---
 
-# Crawling Pipeline (OOP Design)
+# 🕷 Crawling Pipeline (OOP Design)
 
 Each crawl flows through composable stages:
 
@@ -321,17 +321,17 @@ app/crawling/collectors/my_collector.py
 
 Subclass base collector and plug into pipeline config.
 
-Add a new extractor or validator the same way — pipeline is intentionally modular.
+Add a new extractor or validator the same way, pipeline is intentionally modular.
 
 ---
 
 #  Pro Tips
 
-- Keep collectors dumb — no parsing inside them
+- Keep collectors dumb, no parsing inside them
 - Put normalization in validators
-- Keep routes thin — push logic to services
+- Keep routes thin, push logic to services
 - Always test new extractors with pytest fixtures
-- Respect robots.txt — don’t remove the guardrails
+- Respect robots.txt, don’t remove the guardrails
 
 ---
 

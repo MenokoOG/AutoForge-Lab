@@ -4,7 +4,7 @@ Use this checklist before opening a PR or tagging a release.
 
 ---
 
-##  Backend (Python / FastAPI)
+## ✅ Backend (Python / FastAPI)
 
 ### Correctness
 
@@ -37,7 +37,7 @@ Use this checklist before opening a PR or tagging a release.
 
 ---
 
-##  Frontend (React / Vite)
+## ✅ Frontend (React / Vite)
 
 - [ ] API logic stays in `api.ts` (or a dedicated API module)
 - [ ] UI does not hardcode backend URLs (uses env var)
@@ -46,7 +46,7 @@ Use this checklist before opening a PR or tagging a release.
 
 ---
 
-##  Docker / Compose
+## ✅ Docker / Compose
 
 - [ ] `docker-compose up -d --build` works from repo root
 - [ ] Services expose expected ports
@@ -56,7 +56,7 @@ Use this checklist before opening a PR or tagging a release.
 
 ---
 
-##  Documentation
+## ✅ Documentation
 
 - [ ] README updated (features, setup, troubleshooting)
 - [ ] ARCHITECTURE updated if structure changed
@@ -65,7 +65,7 @@ Use this checklist before opening a PR or tagging a release.
 
 ---
 
-##  Security
+## ✅ Security
 
 - [ ] SECURITY.md reviewed for correctness
 - [ ] Dependency updates reviewed (`pip`, `npm`)
@@ -73,7 +73,7 @@ Use this checklist before opening a PR or tagging a release.
 
 ---
 
-##  Release Readiness
+## ✅ Release Readiness
 
 - [ ] CI passes on main branch
 - [ ] Coverage has not regressed unexpectedly
