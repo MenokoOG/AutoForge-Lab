@@ -346,3 +346,7 @@ SECURITY.md
 ```
 
 Pull requests welcome if they keep the architecture clean and responsibility boundaries intact.
+
+## License
+
+MIT. See [`LICENSE`](LICENSE).

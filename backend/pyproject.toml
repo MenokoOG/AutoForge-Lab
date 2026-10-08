@@ -2,6 +2,7 @@
 name = "autoforge-lab-backend"
 version = "0.1.0"
 requires-python = ">=3.11"
+license = { text = "MIT" }
 
 dependencies = [
   "fastapi",
