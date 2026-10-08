@@ -1,7 +1,7 @@
-from pydantic import BaseModel, Field, field_validator
-from datetime import datetime, timezone
 import re
+from datetime import datetime, timezone
 
+from pydantic import BaseModel, Field, field_validator
 
 URL_RE = re.compile(r"^https?://[^\s]+$")
 

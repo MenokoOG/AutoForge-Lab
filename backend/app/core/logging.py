@@ -1,6 +1,7 @@
 import logging
-from pythonjsonlogger import jsonlogger
+
 from app.core.config import settings
+from pythonjsonlogger import jsonlogger
 
 
 def configure_logging() -> None:

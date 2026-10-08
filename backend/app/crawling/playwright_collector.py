@@ -13,9 +13,7 @@ core stack works without browser deps installed.
 
 from __future__ import annotations
 
-from typing import Optional
-
-from app.crawling.base import CollectorResult, BaseCollector
+from app.crawling.base import BaseCollector, CollectorResult
 
 
 class PlaywrightCollector(BaseCollector):

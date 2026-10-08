@@ -1,7 +1,6 @@
+from app.models.crawl import CrawlRecord, CrawlRequestLog, JobRun
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-
-from app.models.crawl import CrawlRecord, CrawlRequestLog, JobRun
 
 
 class CrawlRepository:

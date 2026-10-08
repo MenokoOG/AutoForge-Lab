@@ -6,8 +6,8 @@ This project is community maintained. Security fixes are applied to the latest m
 
 | Version    | Supported      |
 | ---------- | -------------- |
-| main       |  Yes         |
-| older tags |  Best effort |
+| main       | ✅ Yes         |
+| older tags | ⚠️ Best effort |
 
 Always upgrade to the latest commit before reporting a vulnerability.
 
@@ -19,7 +19,7 @@ If you discover a security issue, **do not open a public GitHub issue**.
 
 Please report responsibly:
 
--  Email: menokoog@gmail.com  
+- 📧 Email: menokoog@gmail.com  
   (replace with your real contact)
 - Or: Open a **private security advisory** in GitHub if enabled
 - Subject line: `SECURITY: <short description>`
@@ -214,4 +214,4 @@ Responsible reporters may be acknowledged here (optional) unless they request an
 
 ---
 
-Stay sharp. Build safely. 
+Stay sharp. Build safely. 🔐

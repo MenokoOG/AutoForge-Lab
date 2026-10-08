@@ -1,6 +1,7 @@
+import time
 from dataclasses import dataclass
 from urllib.parse import urlparse
-import time
+
 import httpx
 
 from app.crawling.robots import RobotsClient
