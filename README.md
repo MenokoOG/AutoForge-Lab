@@ -226,7 +226,7 @@ Expected:
 
 ---
 
-# 🕷 Crawling Pipeline (OOP Design)
+#  Crawling Pipeline (OOP Design)
 
 Each crawl flows through composable stages:
 
